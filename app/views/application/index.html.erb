@@ -1,0 +1,8 @@
+<div class="flex justify-center pt-20">
+
+  <ol class="justify-center relative border-s border-gray-200 dark:border-gray-700">
+    <% @posts.each do |post|%>
+     <%=render 'singlePost' , post:post %>
+    <% end %>
+  </ol>
+</div>

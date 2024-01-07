@@ -1,0 +1,14 @@
+<div class="flex justify-center pt-24">
+  <%= render_card title: @post.title do %>
+    <div class="p-4">
+      <p class="mb-3 text-gray-500 dark:text-gray-400"><%= @post.content %></p>
+    </div>
+    <div class="items-center p-6 pt-0 flex justify-between">
+      <%= render_button "Back", variant: :outline, as: :link, href: root_path%>
+      <div class="flex flex-row">
+        <%= button_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900' %>
+        <%= render_button "Edit Post", as: :link, href: edit_post_path(@post)%>
+      </div>
+    </div>
+  <%end %>
+</div>
